@@ -125,7 +125,7 @@ public class JSONSerDe implements SerDe {
       // http://wiki.fasterxml.com/JacksonDataBinding
       root = mapper.readValue(blob.toString(), Map.class);
     } catch (Exception e) {
-      throw new SerDeException(e);
+      return row;
     }
 
     // Lowercase the keys as expected by hive
